@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <!-- Menggunakan url_for untuk mengakses file CSS di folder static -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">>
+</head>
+<body>
+    <div class="login-container">
+        <h2>Login</h2>
+        <form method="POST">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <button type="submit">Login</button>
+        </form>
+        
+        <h2>Belum punya akun?</h2>
+        <!-- Tombol Daftar yang mengarah ke halaman registrasi -->
+        <a href="{{ url_for('register') }}">Daftar di sini</a>
+
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <div class="error">
+                    {{ messages[0] }}
+                </div>
+            {% endif %}
+        {% endwith %}
+    </div>
+</body>
+</html>

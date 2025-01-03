@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div style="width: 1200px; margin: 0 auto; overflow: visible;">
+    <header style="margin-bottom: 60px;">
+        <!-- Turunkan navigasi sesuai margin yang Anda tetapkan -->
+        <nav style="margin-top: 60px; padding-bottom: 10px;">
+            <ul style="list-style: none; display: flex; justify-content: center; gap: 20px; padding: 0; margin: 0;">
+                <li><a href="{{ nav_links['Home'] }}">Home</a></li>
+                <li><a href="{{ nav_links['Guide'] }}">Guide</a></li>
+                <li><a href="{{ nav_links['Submit'] }}">Submit</a></li>
+                <li><a href="{{ nav_links['History'] }}">History</a></li>
+            </ul>
+        </nav>
+        <!-- Turunkan tulisan Send The Love App -->
+        <h1 style="font-size: 3.5rem; margin-top: 20px; margin-bottom: 10px; text-align: center; line-height: 1.2;">💕 Send The Love App ✨</h1>
+    </header>
+
+    <div class="home-container">
+        <h2 style="text-align: center; margin-top: 40px;">Welcome to Send The Love App</h2>
+        <p style="text-align: center; margin-bottom: 30px;">🔒🔑 Send your love with a code that will stun your partner 💌</p>
+        <div class="animated-box" style="margin-top: 30px; text-align: center;">
+            <p>Start your love message now!</p>
+            <a href="{{ nav_links['Submit'] }}" class="button">Get Started</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

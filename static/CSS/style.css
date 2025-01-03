@@ -1,0 +1,306 @@
+/* Base Styles */
+body {
+    font-family: "Courier New", Courier, monospace;
+    background-color: #f4f1ea;
+    color: #2c2c2c;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    animation: backgroundAnimation 10s infinite alternate;
+}
+
+@keyframes backgroundAnimation {
+    0% { background-color: #ffccff; }
+    50% { background-color: #ccffff; }
+    100% { background-color: #ffccff; }
+}
+
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #2c2c2c;
+}
+
+/* Navigasi Bar */
+nav {
+    margin-bottom: 20px;
+    background-color: #2c2c2c;
+    padding: 10px 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #f4f1ea;
+    font-weight: bold;
+    font-size: 1.2em;
+    padding: 8px 16px;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+nav a:hover {
+    background-color: #ff69b4;
+    color: #fff;
+}
+
+/* Home Container */
+.home-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 60px);
+    text-align: center;
+}
+
+.home-container h2 {
+    font-size: 3em;
+    color: #2c2c2c;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.home-container p {
+    font-size: 1.5em;
+    color: #444;
+    margin: 20px 0;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+/* Animated Box */
+.animated-box {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s, background-color 0.3s;
+    animation: bounce 2s infinite alternate;
+}
+
+@keyframes bounce {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-10px); }
+}
+
+.animated-box:hover {
+    background-color: #ffccff;
+}
+
+/* Button */
+.button {
+    background-color: #2c2c2c;
+    color: #f4f1ea;
+    font-size: 1.2em;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: "Courier New", Courier, monospace;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.button:hover {
+    background-color: #444;
+    transform: scale(1.05);
+}
+
+/* Error Message Style */
+.error {
+    color: red;
+    font-weight: bold;
+}
+
+/* History Container */
+.history-container {
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    margin: 20px auto;
+    width: 90%;
+    max-width: 600px;
+}
+
+.history-container ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.history-container li {
+    background-color: rgba(240, 240, 240, 0.8);
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.history-container p {
+    color: #444;
+    font-size: 1.2em;
+}
+
+/* Additional Animations */
+h1, p {
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Style untuk Login Container */
+.login-container {
+    padding: 30px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+/* Style untuk Label di dalam login container */
+.login-container label {
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 5px;
+    display: block; /* Agar label berada di atas input */
+}
+
+/* Style untuk Input (email dan password) */
+.login-container input[type="email"], 
+.login-container input[type="password"] {
+    width: 100%; /* Pastikan input mengisi lebar form */
+    padding: 10px;
+    margin-bottom: 15px; /* Memberikan jarak antara input */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+    background-color: #fff;
+    box-sizing: border-box; /* Memastikan padding dihitung dalam lebar input */
+}
+
+/* Fokus pada input saat diklik */
+.login-container input[type="email"]:focus, 
+.login-container input[type="password"]:focus {
+    outline: none;
+    border-color: #ff69b4; /* Ubah warna border saat fokus */
+}
+
+/* Tombol Submit */
+.login-container button[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    font-size: 1.2em;
+    background-color: #ff69b4;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+/* Hover efek pada tombol */
+.login-container button[type="submit"]:hover {
+    background-color: #ff3385;
+    transform: scale(1.05);
+}
+
+/* Link Daftar */
+.login-container a {
+    color: #ff69b4;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+    display: block;
+    margin-top: 20px;
+}
+
+/* Error Message */
+.error {
+    color: red;
+    font-weight: bold;
+    margin-top: 10px;
+}
+/* Links */
+a {
+    color: #ff69b4;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+    display: block;
+    margin-top: 20px;
+}
+
+button[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    font-size: 1.2em;
+    background-color: #ff69b4;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+button[type="submit"]:hover {
+    background-color: #ff3385;
+    transform: scale(1.05);
+}
+
+.signup-box {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+}
+
+/* Style untuk Label dan Input */
+.form-label {
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 5px;
+    display: block;  /* Menjamin bahwa label dan input akan berada di baris yang sama */
+}
+
+input[type="text"], input[type="email"], input[type="password"] {
+    width: 100%; /* Pastikan input memiliki lebar penuh */
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+    background-color: #fff;
+    box-sizing: border-box;
+}
+
+input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focus {
+    outline: none;
+    border-color: #ff69b4; /* Warna border saat fokus */
+}
+
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+

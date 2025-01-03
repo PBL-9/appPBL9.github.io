@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div style="max-width: 600px; margin: 0 auto; border: 2px solid #ccc; padding: 20px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); background-color: #f9f9f9;">
+    <h1 style="text-align: center;">Love Message Details 💌</h1>
+
+    <p><strong>Recipient:</strong> {{ message.recipient }}</p>
+    <p><strong>Encrypted Message:</strong> {{ message.message }}</p>
+    <p><strong>Password Hint:</strong> {{ message.hint }}</p>
+
+    <form method="POST" action="{{ url_for('decrypt', index=index) }}">
+        <div style="margin-bottom: 15px;">
+            <label for="encryption_type">Encryption Type:</label>
+            <select name="encryption_type" id="encryption_type" required style="display: block; width: 100%; margin-bottom: 10px;">
+                <option value="text">Text (Vigenère Cipher)</option>
+                <option value="math">Math Formula</option>
+                <option value="morse">Morse Code</option>
+            </select>
+        </div>
+    
+        <div style="margin-bottom: 15px;">
+            <label for="password">Enter Password:</label>
+            <input type="password" id="password" name="password" required style="display: block; width: 100%;">
+        </div>
+    
+        <button type="submit" style="margin-top: 10px;">Decrypt</button>
+    </form>    
+
+    {% if error %}
+        <p style="color: red; text-align: center;">{{ error }}</p>
+    {% endif %}
+
+    {% if decrypted_message %}
+        <h2 style="text-align: center;">Decrypted Message:</h2>
+        <p style="text-align: center;">{{ decrypted_message }}</p>
+    {% endif %}
+</div>
+{% endblock %}
